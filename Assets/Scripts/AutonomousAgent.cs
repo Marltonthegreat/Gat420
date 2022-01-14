@@ -6,6 +6,7 @@ public class AutonomousAgent : Agent
 {
     [SerializeField] Perception perception;
     [SerializeField] Perception flockPerception;
+    [SerializeField] ObstaclePerception obstaclePerception;
     [SerializeField] Steering steering;
     [SerializeField] AutonomousAgentData agentData;
 
@@ -19,24 +20,30 @@ public class AutonomousAgent : Agent
         Vector3 acceleration = Vector3.zero;
 
         GameObject[] gameObjects = perception.GetGameObjects();
-
-
-        // seak/flee
+        // seek / flee
         if (gameObjects.Length != 0)
         {
             acceleration += steering.Seek(this, gameObjects[0]) * agentData.seekWeight;
             acceleration += steering.Flee(this, gameObjects[0]) * agentData.fleeWeight;
-        }
-        // wander
-        else
-        {
-            acceleration += steering.Wander(this);
         }
         // flocking
         gameObjects = flockPerception.GetGameObjects();
         if (gameObjects.Length != 0)
         {
             acceleration += steering.Cohesion(this, gameObjects) * agentData.cohesionWeight;
+            //acceleration += steering.Seperation(this, gameObjects, agentData.separationRadius) * agentData.separationWeight;
+            //acceleration += steering.Alignment(this, gameObjects) * agentData.alignmentWeight;
+        }
+        // obstacle avoidance
+        if (obstaclePerception.IsObstacleInFront())
+        {
+            Vector3 direction = obstaclePerception.GetOpenDirection();
+            acceleration += steering.CalculateSteering(this, direction) * agentData.obstacleWeight;
+        }
+        // wander
+        if (acceleration.sqrMagnitude <= maxForce * 0.1f)
+        {
+            acceleration += steering.Wander(this);
         }
 
         velocity += acceleration * Time.deltaTime;

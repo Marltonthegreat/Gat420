@@ -107,6 +107,8 @@ GameObject:
   - component: {fileID: 7797554998800817876}
   - component: {fileID: 7797554998800817873}
   - component: {fileID: 9179981869220699535}
+  - component: {fileID: 5581033557828435959}
+  - component: {fileID: 2848273804180085881}
   - component: {fileID: 7797554998800817886}
   - component: {fileID: 7797554998800817875}
   - component: {fileID: 7797554998800817874}
@@ -146,8 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  perception: {fileID: 7797554998800817873}
+  perception: {fileID: 5581033557828435959}
   flockPerception: {fileID: 9179981869220699535}
+  obstaclePerception: {fileID: 2848273804180085881}
   steering: {fileID: 7797554998800817886}
   agentData: {fileID: 11400000, guid: ed1b9797cb8158340a7c4dbc4bb92d17, type: 2}
 --- !u!114 &7797554998800817873
@@ -180,6 +183,41 @@ MonoBehaviour:
   tagName: Agent1
   radius: 5
   maxAngle: 180
+--- !u!114 &5581033557828435959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7797554998800817879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0583656dc5e04c498c35f949b82f203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagName: Player
+  raycastTransform: {fileID: 7797554997894822010}
+  distance: 10
+  angle: 45
+  numRaycast: 20
+--- !u!114 &2848273804180085881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7797554998800817879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f19a18884b887b40834d155a359ca74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 10
+  radius: 1
+  numRaycast: 20
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &7797554998800817886
 MonoBehaviour:
   m_ObjectHideFlags: 0
