@@ -31,8 +31,8 @@ public class AutonomousAgent : Agent
         if (gameObjects.Length != 0)
         {
             acceleration += steering.Cohesion(this, gameObjects) * agentData.cohesionWeight;
-            //acceleration += steering.Seperation(this, gameObjects, agentData.separationRadius) * agentData.separationWeight;
-            //acceleration += steering.Alignment(this, gameObjects) * agentData.alignmentWeight;
+            acceleration += steering.Seperation(this, gameObjects, agentData.separationRadius) * agentData.separationWeight;
+            acceleration += steering.Alignment(this, gameObjects) * agentData.alignmentWeight;
         }
         // obstacle avoidance
         if (obstaclePerception.IsObstacleInFront())
