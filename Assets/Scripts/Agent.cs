@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Agent : MonoBehaviour
 {
-    [SerializeField] float speed;
+    public Movement movement;
 }
