@@ -16,4 +16,11 @@ public class WaypointNode : Node
             }
         }
     }
+
+    public static WaypointNode GetRandomWaypoint()
+    {
+        WaypointNode[] waypoints = GetNodes<WaypointNode>();
+
+        return (waypoints == null) ? null : waypoints[Random.Range(0, waypoints.Length)];
+    }
 }

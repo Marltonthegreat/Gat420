@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static T[] GetNodes<T>() where T : Component
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return FindObjectsOfType<T>();
     }
 }
