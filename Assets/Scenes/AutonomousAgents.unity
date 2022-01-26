@@ -556,6 +556,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   steps: 0
   nodeSelector: {fileID: 747974618}
+  searchType: 0
+  info: watermelon soup
 --- !u!4 &747974620
 Transform:
   m_ObjectHideFlags: 0
@@ -968,7 +970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214124238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5216798, y: -15.214008, z: 26.26916}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1978844090}
