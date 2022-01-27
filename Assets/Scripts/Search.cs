@@ -21,6 +21,21 @@ public static class Search
         return found;
     }
 
+    public static void CreatePathFromParents(GraphNode node, ref List<GraphNode> path)
+    {
+        // while node not null
+        while (node != null)
+        {
+            // add node to list path
+            path.Add(node);
+            // set node to node parent
+            node = node.parent;
+        }
+
+        // reverse path
+        path.Reverse();
+    }
+
     public static bool DFS(GraphNode source, GraphNode destination, ref List<GraphNode> path, int maxSteps)
     {
         bool found = false;
@@ -64,12 +79,62 @@ public static class Search
         return found;
     }
 
-
-
     public static bool BFS(GraphNode source, GraphNode destination, ref List<GraphNode> path, int maxSteps)
     {
         bool found = false;
 
+        // create queue of graph nodes
+        var nodes = new LinkedList<GraphNode>();
+
+        // set source node visited to true
+        source.visited = true;
+        // enqueue source node
+        nodes.AddLast(source);
+
+        // set the current number of steps
+        int steps = 0;
+        while (!found && nodes.Count > 0 && steps++ < maxSteps)
+        {
+            // dequeue node
+            var node = nodes.First();
+            nodes.RemoveFirst();
+            // iterate through neighbors of node
+            foreach (var neighbor in node.neighbors)
+            {
+                // check if neighbor has not been visited
+                if (!neighbor.visited)
+                {
+                    // set neighbor visited to true
+                    neighbor.visited = true;
+                    // set neighbor parent to node
+                    neighbor.parent = node;
+                    // enqueue neighbor
+                    nodes.AddLast(neighbor);
+        
+                }
+                // check if neighbor is the destination node
+                if (neighbor.Equals(destination))
+		        {
+                    // set found to true
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (found)
+        {
+            // create path from destination to source using node parents
+            path = new List<GraphNode>();
+            CreatePathFromParents(destination, ref path);
+        }
+        else
+        {
+            // did not find destination, convert nodes queue to path
+            path = nodes.ToList();
+        }
+
         return found;
+
     }
 }
