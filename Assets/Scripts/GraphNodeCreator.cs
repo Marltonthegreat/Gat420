@@ -18,8 +18,7 @@ public class GraphNodeCreator : MonoBehaviour
 			Vector3 position = Vector3.zero;
 			if (Utilities.ScreenToWorld(Input.mousePosition, layerMask, ref position))
 			{
-				position = Utilities.SnapToGrid(position, Vector3.one * grid);
-				// make sure position doesn't have a node already
+				position = Utilities.SnapToGrid(position, new Vector3(grid, 0, grid));
 				if (Physics.CheckSphere(position, grid * 0.25f, 1 << nodePrefab.layer))
 				{
 					return;

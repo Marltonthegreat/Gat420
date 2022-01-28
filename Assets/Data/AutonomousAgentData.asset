@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seekWeight: 0
   fleeWeight: 5
-  cohesionWeight: 0.25
+  cohesionWeight: 0.5
   separationWeight: 5
-  alignmentWeight: 0.75
+  alignmentWeight: 0.25
   obstacleWeight: 20
   separationRadius: 1.5
