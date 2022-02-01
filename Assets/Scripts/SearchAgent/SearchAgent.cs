@@ -63,6 +63,6 @@ public class SearchAgent : Agent
     private void GeneratePath()
     {
         GraphNode.ResetNodes();
-        Search.BuildPath(Search.BFS, sourceNode, destinationNode, ref path);
+        Search.BuildPath(Search.AStar, sourceNode, destinationNode, ref path);
     }
 }
