@@ -1171,6 +1171,10 @@ PrefabInstance:
       propertyPath: perception
       value: 
       objectReference: {fileID: 291953482}
+    - target: {fileID: -640193927963148810, guid: eb9f63a49a7b73544ac8b7370454e0df, type: 3}
+      propertyPath: health.value
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 448427130279064646, guid: eb9f63a49a7b73544ac8b7370454e0df, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.953717
