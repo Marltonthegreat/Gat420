@@ -13,16 +13,18 @@ public class AttackState : State
     {
         owner.movement.Stop();
         owner.animator.SetTrigger("attack");
-        owner.timer.value = 2;
+        Debug.Log(name + " enter");
     }
 
     public override void OnExit()
     {
-
+        Debug.Log(name + " exit");
     }
 
     public override void OnUpdate()
     {
-
+        owner.animator.SetTrigger("attack");
+        owner.timer.value = 2;
+        Debug.Log(name + " update");
     }
 }
