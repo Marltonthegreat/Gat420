@@ -19,16 +19,12 @@ public class EvadeState : State
 
         owner.perception.angle = 180;
         owner.perception.distance = 10;
-
-        Debug.Log(name + " enter");
     }
 
     public override void OnExit()
     {
         owner.perception.angle = angle;
         owner.perception.distance = distance;
-
-        Debug.Log(name + " exit");
     }
 
     public override void OnUpdate()
@@ -36,7 +32,5 @@ public class EvadeState : State
         Vector3 direction = (owner.transform.position - owner.enemy.transform.position).normalized; 
 
         owner.movement.MoveTowards(owner.transform.position + direction);
-
-        Debug.Log(name + " update");
     }
 }

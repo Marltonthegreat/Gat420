@@ -1,12 +1,67 @@
 fileFormatVersion: 2
-guid: 0d59a07496bfafc419bcb16c9778b705
+guid: b3d64bd6bc7683c4b99ad147f637c314
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch15_body
+    second: {fileID: 2100000, guid: 369ed8dc1f09e9246830e28ebb3727ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch15_body1
+    second: {fileID: 2100000, guid: 3f20ffdf7df85124db977998fee3111f, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch15_1001_Diffuse
+    second: {fileID: 2800000, guid: 601ac5c330d7b1e4ab60e6fc60d17b29, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch15_1001_Glossiness
+    second: {fileID: 2800000, guid: ba8f38cf2f12ccc40b8f5d8939f12f6d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch15_1001_Normal
+    second: {fileID: 2800000, guid: e0ccc5eaa67834d49a8fdd28d1f79155, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch15_1001_Specular
+    second: {fileID: 2800000, guid: 77f458118aa73044da5fa83511023c67, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch15_1002_Diffuse
+    second: {fileID: 2800000, guid: 8c86d1d19d462fc439506e314f3a113a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch15_1002_Emissive
+    second: {fileID: 2800000, guid: abb3d358be8c1154e81e5e9cc5a22989, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch15_1002_Glossiness
+    second: {fileID: 2800000, guid: 4d80c9e2a2b76fb4caa02ad235318ccd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch15_1002_Normal
+    second: {fileID: 2800000, guid: ed244f325ad09ff4788380ba6ed19655, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch15_1002_Specular
+    second: {fileID: 2800000, guid: 4ee7baaaec88d5a4db981ba11b3c9b2a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -75,7 +130,13 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - 854418b60a2f21145bc70858d0fe630e
+  - 3a2c85973397cd54092e5209e13b228e
+  - b76486d1c5595f54180afb0bf72fa870
+  - 04369dcef9056b0478440d0665e1b69f
+  - 0d59a07496bfafc419bcb16c9778b705
+  - d66bd9b66e16d954e86366af0e1586e4
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -844,11 +905,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: b3d64bd6bc7683c4b99ad147f637c314, type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 2
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

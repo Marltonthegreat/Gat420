@@ -30,6 +30,8 @@ public class StateMachine
 
     public void SetState(State newState)
     {
+        if (newState == null || newState == currentState) return;
+        
         currentState?.OnExit();
 
         newState.OnEnter();
