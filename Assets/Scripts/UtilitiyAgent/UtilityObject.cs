@@ -11,6 +11,9 @@ public class UtilityObject : MonoBehaviour
         [Range(-1, 1)] public float change;
     }
 
+    public float duration;
+    public Transform location;
+
     public Effector[] effectors;
     public Dictionary<Need.Type, float> registry = new Dictionary<Need.Type, float>();
 
