@@ -31,7 +31,7 @@ public class Need : MonoBehaviour
     void Update()
     {
         input = input - (decay * Time.deltaTime);
-        input = Mathf.Clamp(input, -1, 1);
+        input = Mathf.Clamp(input, 0, 1);
 
         meter.slider.value = 1 - motive;
     }
